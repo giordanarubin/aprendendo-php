@@ -1,0 +1,29 @@
+<?php
+
+//iniciar a sessão
+session_start();
+
+//constante de controle, pra que o fluxo de dados passe sempre pelo index, sem acesso a outras pastas
+define('CONTROL', true);
+
+//verificar se há usuário logado
+$usuario_logado = $_SESSION['usuario'] ?? null;//se existir usuario logado, retorna ele; se nao, retorna null
+
+//verifica qual é a rota na URL
+if(empty($usuario_logado)){//empty retorna true para variavel vazia ou null
+    $rota = 'login';
+} else {
+    $rota = $_GET['rota'] ?? 'home';//array que coleta dados atraves do método get
+}
+
+//analisa a rota
+$rotas = [
+    'login' => 'login.php',
+    'home' => 'home.php'
+];
+
+if(!key_exists($rota, $rotas)){//checa se o index rota existe no array rotas
+    die('Acesso negado.');
+} else {
+    require_once $rotas[$rota];
+};

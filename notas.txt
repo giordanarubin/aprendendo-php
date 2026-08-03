@@ -1,0 +1,2 @@
+-  PHP é uma linguagem fracamente tipada.
+- Variável em PHP: sempre com $ antes. Constante não começa com $. Variaveis são case sensitive.
