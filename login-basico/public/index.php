@@ -16,10 +16,16 @@ if(empty($usuario_logado)){//empty retorna true para variavel vazia ou null
     $rota = $_GET['rota'] ?? 'home';//array que coleta dados atraves do método get
 }
 
+// se o usuário está logado mas a rota é login, redireciona para home
+if(!empty($usuario_logado) && $rota == 'login'){
+    $rota = 'home';
+}
+
 //analisa a rota
 $rotas = [
     'login' => 'login.php',
-    'home' => 'home.php'
+    'home' => 'home.php',
+    'logout' => 'logout.php'
 ];
 
 if(!key_exists($rota, $rotas)){//checa se o index rota existe no array rotas

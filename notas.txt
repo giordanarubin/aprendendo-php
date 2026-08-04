@@ -1,2 +1,5 @@
 -  PHP é uma linguagem fracamente tipada.
 - Variável em PHP: sempre com $ antes. Constante não começa com $. Variaveis são case sensitive.
+- Função die( ): serve pra parar a execução do código PHP em certo ponto quando há mais código pra baixo
+- $variavel .= faz concatenação com o valor já existente na string
+- Diferença entre aspas simples e duplas: nas duplas há o parse de valor de variável
